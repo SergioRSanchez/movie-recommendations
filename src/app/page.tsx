@@ -58,7 +58,7 @@ const MovieCard = ({movie}: MovieCardProps) => {
   useEffect(() => {
     const detailUrl = `https://api.themoviedb.org/3/movie/${movie.id}?${apiKey}&language=pt-BR`
     getDetails(detailUrl)
-  }, [movie.id])
+  }, [movie.id, apiKey])
   
   const getVideoLink = async (url: string) => {
     const res = await fetch(url)
@@ -69,7 +69,7 @@ const MovieCard = ({movie}: MovieCardProps) => {
   useEffect(() => {
     const videoUrl = `https://api.themoviedb.org/3/movie/${movie.id}/videos?${apiKey}`
     getVideoLink(videoUrl)
-  }, [movie.id])
+  }, [movie.id, apiKey])
 
   const formatRunTime = (runtime: number): string => {
     const hours = Math.floor(runtime / 60)
@@ -247,7 +247,7 @@ export default function Home() {
     setRandomIndexes(getRandomIndexes(movies.length))
     setTimeout(() => {
       setIsLoading(false)
-    }, 500)
+    }, 700)
   }
 
   return (
