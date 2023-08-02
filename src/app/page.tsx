@@ -33,7 +33,7 @@ interface MovieCardProps {
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY
 
-function MovieCard({movie}: MovieCardProps) {
+const MovieCard = ({movie}: MovieCardProps) => {
   const [movieDetails, setMovieDetails] = useState<Movie["movieDetails"]>([])
   const [movieRunTime, setMovieRuntime] = useState(0)
   const [movieVideo, setMovieVideo] = useState<Movie["movieVideo"]>([])
@@ -121,7 +121,7 @@ function MovieCard({movie}: MovieCardProps) {
   )
 }
 
-function EmptyMovieCard() {
+const EmptyMovieCard = () => {
   return (
     <div className='flex flex-col sm:flex-row gap-9 items-center animate-pulse cursor-wait'>
       <div className='flex flex-col gap-3'>
