@@ -58,7 +58,7 @@ const MovieCard = ({movie}: MovieCardProps) => {
   useEffect(() => {
     const detailUrl = `https://api.themoviedb.org/3/movie/${movie.id}?${apiKey}&language=pt-BR`
     getDetails(detailUrl)
-  }, [])
+  })
   
   const getVideoLink = async (url: string) => {
     const res = await fetch(url)
@@ -69,7 +69,7 @@ const MovieCard = ({movie}: MovieCardProps) => {
   useEffect(() => {
     const videoUrl = `https://api.themoviedb.org/3/movie/${movie.id}/videos?${apiKey}`
     getVideoLink(videoUrl)
-  }, [])
+  })
 
   const formatRunTime = (runtime: number): string => {
     const hours = Math.floor(runtime / 60)
