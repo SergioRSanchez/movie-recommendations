@@ -108,13 +108,15 @@ const MovieCard = ({movie}: MovieCardProps) => {
           <span className='text-cinza-light text-xs'>{getYearFromRelease(movie.release_date)}</span>
         </div>
       </div>
-      <a href={youTubeUrl + firstTrailerKey} target='_blank'><button className='bg-cinza flex items-center gap-2 justify-center px-4 py-2 rounded hover:bg-cinza-medio hover:scale-105 transition-all duration-300'>
-        <div className='w-7 bg-cinza-dark rounded-full'>
-          <Image src={Play} alt='Play' />
-        </div>
-        <span className='text-white'>Assistir trailer</span>
-        {/* <button onClick={() => handleShowTrailer(firstTrailerKey)}><span className='text-white'>Assistir trailer</span></button> */}
-      </button></a>
+      <a href={youTubeUrl + firstTrailerKey} target='_blank' className='bg-cinza flex items-center gap-2 justify-center px-4 py-2 rounded hover:bg-cinza-medio hover:scale-105 transition-all duration-300'>
+        <button className='flex gap-2'>
+          <div className='w-7 bg-cinza-dark rounded-full'>
+            <Image src={Play} alt='Play' />
+          </div>
+          <span className='text-white'>Assistir trailer</span>
+          {/* <button onClick={() => handleShowTrailer(firstTrailerKey)}><span className='text-white'>Assistir trailer</span></button> */}
+        </button>
+      </a>
       {/* {selectedMovieKey && 
         <iframe width="560" height="315" className='fixed z-10 top-1/2 left-1/2' src={`https://www.youtube.com/embed/${firstTrailerKey}`} title={`${movie.trailer} Trailer`} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       } */}
